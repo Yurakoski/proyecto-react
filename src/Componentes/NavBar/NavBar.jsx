@@ -1,18 +1,24 @@
 import React from 'react';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from './CartWidget';
 
-const NavBar = () => {
+const NavBar = ({children}) => {
+
+const categories = [
+        {id: 0 , name: 'Categoría 1'},
+        {id: 1 , name: 'Categoría 2'},
+        {id: 2 , name: 'Categoría 3'},
+    ]
+
     return(
         <header>
             <div class="logo">LOGO</div>
-            <h1>E-Commerce</h1>
+            {children}
             <nav>
-                <a href="">Categoría 1</a>
-                <a href="">Categoría 2</a>
-                <a href="">Categoría 3</a>
+                {categories.map((category)=>{
+                   return <a key={category.id} href="">{category.name}</a>
+                })}
             </nav>
-            <ShoppingCartIcon/>
-
+            <CartWidget/>
         </header>
     )
 }
