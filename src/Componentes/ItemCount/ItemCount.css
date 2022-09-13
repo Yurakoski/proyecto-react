@@ -1,0 +1,12 @@
+.counter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgb(200, 168, 253);
+}
+
+.button-container{
+    margin-top: 1rem;
+}

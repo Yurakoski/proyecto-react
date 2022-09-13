@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './Componentes/NavBar/CartWidget.css';
+import './Componentes/CartWidget/CartWidget.css';
 import './Componentes/NavBar/NavBar.css';
-import './Componentes/NavBar/ItemListContainer.css';
+import './Componentes/ItemListContainer/ItemListContainer.css';
+import './Componentes/ItemCount/ItemCount.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

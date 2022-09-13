@@ -1,7 +1,8 @@
 import './App.css';
 import NavBar from './Componentes/NavBar/NavBar'
-import Title from './Componentes/NavBar/Title';
-import ItemListContainer from './Componentes/NavBar/ItemListContainer';
+import Title from './Componentes/Title/Title';
+import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
+import ItemCount from './Componentes/ItemCount/ItemCount';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
         <Title/>
       </NavBar>
       <ItemListContainer greeting="Bienvenidos"/>
+      <ItemCount stock={5} initial={1}/>
     </>
   );
 }
