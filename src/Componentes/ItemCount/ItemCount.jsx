@@ -19,6 +19,7 @@ const ItemCount = ({stock , initial}) => {
     }
 
     const onAdd = () =>{
+        setCounter(0);
         alert("Productos agregados al carrito");
     }
 
