@@ -11,7 +11,7 @@ const categories = [
 
     return(
         <header>
-            <div class="logo">LOGO</div>
+            <div className="logo">LOGO</div>
             {children}
             <nav>
                 {categories.map((category)=>{

@@ -5,6 +5,7 @@ import './Componentes/CartWidget/CartWidget.css';
 import './Componentes/NavBar/NavBar.css';
 import './Componentes/ItemListContainer/ItemListContainer.css';
 import './Componentes/ItemCount/ItemCount.css';
+import './Componentes/ItemDetail/ItemDetail.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
