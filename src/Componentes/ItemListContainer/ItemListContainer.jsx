@@ -6,7 +6,7 @@ import { SpinnerCircular } from 'spinners-react';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({ greeting })=> {
-    const URL_BASE = 'https://fakestoreapi.com/products'
+    const URL_HOME = 'https://fakestoreapi.com/products?limit=3'
     const URL_CATEGORY = 'https://fakestoreapi.com/products/category/'
     let {IdCategory} = useParams();
     const [listProducts, setListProducts] = useState([]);
@@ -15,12 +15,13 @@ const ItemListContainer = ({ greeting })=> {
     
     useEffect(() => {
         const getItems = async() =>{ 
-            let url = URL_CATEGORY
+            let url = URL_CATEGORY;
            
             if (IdCategory === undefined){
-                 url = 'https://fakestoreapi.com/products?limit=3'
+                url = URL_HOME;
             }else{
-                url=`${URL_CATEGORY}${IdCategory}`}
+                url=`${URL_CATEGORY}${IdCategory}`
+            }
 
             try{
                 const responseApi = await fetch(url);
