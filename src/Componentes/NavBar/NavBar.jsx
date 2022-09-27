@@ -1,24 +1,26 @@
 import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link, NavLink } from 'react-router-dom';
 
-const NavBar = ({children}) => {
+const NavBar = ({ children }) => {
 
 const categories = [
-        {id: 0 , name: 'Categoría 1'},
-        {id: 1 , name: 'Categoría 2'},
-        {id: 2 , name: 'Categoría 3'},
+        {id: 0 , name: 'electronics', route: "/category/electronics"},
+        {id: 1 , name: 'jewelery', route: "/category/jewelery"},
+        {id: 2 , name: "men's clothing", route: "/category/men's clothing"},
+        {id: 3 , name: "women's clothing", route: "/category/women's clothing"}
     ]
 
     return(
         <header>
-            <div className="logo">LOGO</div>
-            {children}
+            <Link to='/'><div className="logo">LOGO</div></Link>
+            <Link to='/'>{children}</Link>
             <nav>
                 {categories.map((category)=>{
-                   return <a key={category.id} href="">{category.name}</a>
+                   return <NavLink key={category.id} to={category.route}>{category.name}</NavLink>
                 })}
             </nav>
-            <CartWidget/>
+            <Link to='/cart'><CartWidget/></Link>
         </header>
     )
 }

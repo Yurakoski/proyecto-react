@@ -9,25 +9,20 @@ const ItemDetailContainer = ()=> {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
         const getItem = async() =>{ 
         try{
             const responseApi = await fetch('https://fakestoreapi.com/products/1');
             const responseParse = await responseApi.json();
             setproduct(responseParse);
             }
-
         catch(err){
             console.error(err);
             }
-
         finally{
             setLoading(false);
             }        
         }
-
         getItem();
-
         }, []);
 
     return(
