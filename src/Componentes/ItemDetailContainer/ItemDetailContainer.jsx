@@ -9,11 +9,10 @@ const ItemDetailContainer = ()=> {
     const [product, setproduct] = useState({});
     const [loading, setLoading] = useState(true);
     let {IdProduct} = useParams();
-console.log(IdProduct)
+
     useEffect(() => {
         const getItem = async() =>{ 
         try{
-         
             const responseApi = await fetch(`https://fakestoreapi.com/products/${IdProduct}`);
             const responseParse = await responseApi.json();
             setproduct(responseParse);
@@ -26,7 +25,7 @@ console.log(IdProduct)
             }        
         }
         getItem();
-        }, []);
+        }, [IdProduct]);
 
     return(
         <>
