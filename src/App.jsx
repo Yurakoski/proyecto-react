@@ -8,24 +8,19 @@ import CartView from './Componentes/CartView/CartView';
 import ItemCount from './Componentes/ItemCount/ItemCount';
 
 const App = () => {
-
   return (
     <>
       <BrowserRouter>
         <NavBar>
            <Title/>
         </NavBar>
-
         <Routes>
           <Route path='/' element={<ItemListContainer greeting="Bienvenidos"/>}/>
           <Route path='/category/:IdCategory' element={<ItemListContainer greeting="Bienvenidos"/>}/>
-          <Route path='/products/:IdProduct' element={<ItemDetailContainer/>}/>
+          <Route path='/products/:IdProduct' element={<ItemDetailContainer />}/>
           <Route path='/cart' element={<CartView/>}/>
         </Routes>
-
-
       </BrowserRouter>
-      <ItemCount stock={5} initial={1}/>
     </>
   );
 }
