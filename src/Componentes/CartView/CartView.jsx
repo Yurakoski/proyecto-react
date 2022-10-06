@@ -9,7 +9,7 @@ const CartView = () => {
     return(
         <>
             {cart.map((prod) => {
-                return <div>Producto: {prod.product.title} Cantidad: {prod.counter}</div>
+                return <div key={prod.product.id}>Producto: {prod.product.title} Cantidad: {prod.counter}</div>
                 })}
         </>
     )

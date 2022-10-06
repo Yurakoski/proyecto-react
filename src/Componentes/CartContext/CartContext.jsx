@@ -8,8 +8,9 @@ const CartProvider = ({children})=>{
 
     const addItem= (product, counter) => {
        if (isInCart(product.id)){
-            //TODO
-        }else{
+        const index= cart.findIndex(prod=> prod.product.id === product.id)
+        cart[index].counter = cart[index].counter + counter;
+    }else{
             setCart([...cart, {product, counter}]);
             }
         }
@@ -20,7 +21,7 @@ const CartProvider = ({children})=>{
     }
 
     const isInCart = (id)=>{
-        return cart.some((product)=> product.id === id);
+        return cart.some((prod)=> prod.product.id === id);
     }
 
     const clear = ()=>{
