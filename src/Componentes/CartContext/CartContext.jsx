@@ -7,12 +7,12 @@ const CartProvider = ({children})=>{
     const [cart, setCart] = useState([]);
 
     const addItem= (product, counter) => {
-        if (isInCart(product.id)){
-
+       if (isInCart(product.id)){
+            //TODO
         }else{
             setCart([...cart, {product, counter}]);
+            }
         }
-    }
 
     const removeItem= (id) =>{
         setCart(cart.filter((product)=>{
