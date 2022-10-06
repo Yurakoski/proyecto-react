@@ -6,13 +6,15 @@ import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailCon
 import { BrowserRouter, Routes , Route } from 'react-router-dom'
 import CartView from './Componentes/CartView/CartView';
 import ItemCount from './Componentes/ItemCount/ItemCount';
+import CartProvider from './Componentes/CartContext/CartContext';
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartProvider> 
         <NavBar>
-           <Title/>
+           <Title />
         </NavBar>
         <Routes>
           <Route path='/' element={<ItemListContainer greeting="Bienvenidos"/>}/>
@@ -20,7 +22,8 @@ const App = () => {
           <Route path='/products/:IdProduct' element={<ItemDetailContainer />}/>
           <Route path='/cart' element={<CartView/>}/>
         </Routes>
-      </BrowserRouter>
+      </CartProvider> 
+    </BrowserRouter>
     </>
   );
 }

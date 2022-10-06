@@ -11,7 +11,6 @@ const ItemListContainer = ({ greeting })=> {
     let {IdCategory} = useParams();
     const [listProducts, setListProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log(IdCategory)
     
     useEffect(() => {
         const getItems = async() =>{ 

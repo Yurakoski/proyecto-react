@@ -1,14 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
+import { Context } from "../CartContext/CartContext";
 
 const ItemDetail = ( {product} ) => {
-
+    
     const [purchaseCompleted, setPurchaseCompleted] = useState(false);
-
+    const {addItem} = useContext(Context);
+    
     const finishBuying = () => {
         setPurchaseCompleted(true);
     }
+    const onAdd = (counter) =>{
+        finishBuying();
+        addItem(product, counter);
+    }
+    
+
 
     return(
         <>
@@ -21,7 +29,7 @@ const ItemDetail = ( {product} ) => {
             <p>Precio: {product.price}</p>
         </div>
         </div>
-        {purchaseCompleted ? <Link to='/cart'>Finalizar compra</Link> : <ItemCount stock={5} initial={1} finishBuying={finishBuying} />}
+        {purchaseCompleted ? <Link to='/cart'>Finalizar compra</Link> : <ItemCount onAdd={onAdd} stock={5} initial={1} finishBuying={finishBuying} />}
         </>
     )
 }
