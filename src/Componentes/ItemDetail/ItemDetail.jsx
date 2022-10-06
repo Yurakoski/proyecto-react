@@ -16,8 +16,6 @@ const ItemDetail = ( {product} ) => {
         addItem(product, counter);
     }
     
-
-
     return(
         <>
         <div className="container-card">
