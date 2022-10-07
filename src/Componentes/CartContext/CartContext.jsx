@@ -29,8 +29,7 @@ const CartProvider = ({children})=>{
     }
 
     const removeItem= (id) =>{
-        setCart(cart.filter((product)=>{
-            return product.id !== id}));
+        setCart(cart.filter((prod)=>{ return prod.product.id !== id }));
     }
 
     const isInCart = (id)=>{
