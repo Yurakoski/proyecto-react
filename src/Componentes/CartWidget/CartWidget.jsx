@@ -8,7 +8,8 @@ const CartWidget = () => {
     return(
         <>
             <ShoppingCartIcon/>
-            <div>{counterProducts}</div>
+            
+            {counterProducts !== 0 ? (<div>{counterProducts}</div>) : (<div></div>)  }
         </>
         )
 }
