@@ -14,7 +14,6 @@ const CartProvider = ({children})=>{
     const addItem= (product, counter) => {
        if (isInCart(product.id)){
         const index= cart.findIndex(prod=> prod.product.id === product.id);
-        const newCart = cart.filter(prod=> prod !== product[index])
         cart[index].counter = cart[index].counter + counter;
         quantityInCart();
     }else{
