@@ -39,7 +39,9 @@ const ItemListContainer = ({ greeting })=> {
 
     return(
         <>
-            <h2>{greeting}</h2>
+            <div className="title">
+                <h2>{greeting}</h2>
+            </div>
             { loading ? <SpinnerCircular /> : <ItemList products= {listProducts} />}
         </>
     )

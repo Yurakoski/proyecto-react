@@ -7,6 +7,7 @@ import './Componentes/ItemListContainer/ItemListContainer.css';
 import './Componentes/ItemCount/ItemCount.css';
 import './Componentes/ItemDetail/ItemDetail.css';
 import './Componentes/Item/Item.css';
+import './Componentes/Footer/Footer.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
