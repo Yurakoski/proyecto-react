@@ -5,10 +5,10 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = ({ children }) => {
 
 const categories = [
-        {id: 0 , name: 'Electronics', route: "/category/electronics"},
-        {id: 1 , name: 'Jewelery', route: "/category/jewelery"},
-        {id: 2 , name: "Men's clothing", route: "/category/men's clothing"},
-        {id: 3 , name: "Women's clothing", route: "/category/women's clothing"}
+        {id: 0 , name: 'Tv', route: "/category/tv"},
+        {id: 1 , name: 'Smartphone', route: "/category/smartphone"},
+       // {id: 2 , name: "Men's clothing", route: "/category/men's clothing"},
+        //{id: 3 , name: "Women's clothing", route: "/category/women's clothing"}
     ]
 
     return(

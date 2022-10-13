@@ -15,7 +15,9 @@ const ItemListContainer = ({ greeting })=> {
     
     useEffect(() => {
         const productsCollection = collection(db,'products');
-        getDocs(productsCollection).then((data)=>{
+        const _query = query(productsCollection, where('category','==',IdCategory || null))
+        
+        getDocs(IdCategory ? _query : productsCollection ).then((data)=>{
             const lista = data.docs.map((product) =>{
                 return {...product.data(), 
                         id: product.id}
