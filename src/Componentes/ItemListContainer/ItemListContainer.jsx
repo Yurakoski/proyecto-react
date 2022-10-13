@@ -1,19 +1,36 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import products from '../../assets/products.js';
 import ItemList from '../ItemList/ItemList.jsx';
 import { SpinnerCircular } from 'spinners-react';
 import { useParams } from 'react-router-dom';
+import { db } from '../../firebase/firebase';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 
 const ItemListContainer = ({ greeting })=> {
-    const URL_HOME = 'https://fakestoreapi.com/products?limit=3'
-    const URL_CATEGORY = 'https://fakestoreapi.com/products/category/'
+    //const URL_HOME = 'https://fakestoreapi.com/products?limit=3'
+    //const URL_CATEGORY = 'https://fakestoreapi.com/products/category/'
     let {IdCategory} = useParams();
     const [listProducts, setListProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        const getItems = async() =>{ 
+        const productsCollection = collection(db,'products');
+        getDocs(productsCollection).then((data)=>{
+            const lista = data.docs.map((product) =>{
+                return {...product.data(), 
+                        id: product.id}
+            })
+            setListProducts(lista);
+        })
+        .catch((err)=>{
+            console.error(err);
+        })
+        .finally(() => {
+            setLoading(false);
+        })
+    }, [IdCategory]);
+
+        /*const getItems = async() =>{ 
             let url = URL_CATEGORY;
            
             if (IdCategory === undefined){
@@ -35,7 +52,7 @@ const ItemListContainer = ({ greeting })=> {
                 }        
             }
             getItems();
-            }, [IdCategory]);
+            }, [IdCategory]);*/
 
     return(
         <>
