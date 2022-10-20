@@ -2,7 +2,7 @@ import React from 'react';
 
 const Title = () => {
     return(
-        <h1>E-commerce</h1>
+        <h1>electro+</h1>
     )
 }
 

@@ -1,16 +1,18 @@
-import React, {createContext, useState, useEffect} from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const Context = createContext();
 
-const CartProvider = ({children})=>{
+const CartProvider = ({ children })=>{
     
     const [cart, setCart] = useState([]);
     const [counterProducts, setCounterProducts] = useState(0);
 
+    //Setea la cantidad de productos cuando se agrega o elimina un producto del carrito
     useEffect(() => {
         quantityInCart();
     }, [cart]);
 
+    //Si el producto no está en el carrito, lo agrega, sino le suma la cantidad al producto repetido
     const addItem= (product, counter) => {
        if (isInCart(product.id)){
         const index= cart.findIndex(prod=> prod.product.id === product.id);
@@ -21,6 +23,7 @@ const CartProvider = ({children})=>{
             }
     }
 
+    //Suma los productos y sus cantidades
     const quantityInCart= () => {
         const quantitiesProducts = cart.map(item => item.counter);
         const quantity = quantitiesProducts.reduce((sum, item) => sum + item, 0);
@@ -41,7 +44,7 @@ const CartProvider = ({children})=>{
 
     return (
         <>
-        <Context.Provider value={{cart, counterProducts, addItem, clear, removeItem}}>{children}</Context.Provider>
+        <Context.Provider value={ {cart, counterProducts, addItem, clear, removeItem} }>{ children }</Context.Provider>
         </>
     )
 }

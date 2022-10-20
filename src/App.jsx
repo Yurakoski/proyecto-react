@@ -7,6 +7,7 @@ import {BrowserRouter, Routes , Route} from 'react-router-dom'
 import CartView from './Componentes/CartView/CartView';
 import Footer from './Componentes/Footer/Footer';
 import CartProvider from './Componentes/CartContext/CartContext';
+import Form from './Componentes/Form/Form';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/category/:IdCategory' element={<ItemListContainer greeting="Bienvenidos"/>}/>
           <Route path='/products/:IdProduct' element={<ItemDetailContainer />}/>
           <Route path='/cart' element={<CartView/>}/>
+          <Route path='/form' element={<Form/>}/>
         </Routes>
         <Footer />
       </CartProvider> 
