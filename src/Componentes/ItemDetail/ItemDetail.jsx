@@ -9,7 +9,7 @@ const ItemDetail = ({ product }) => {
     const {addItem} = useContext(Context);
     
     const finishBuying = () => {
-        setPurchaseCompleted(true);
+        setPurchaseCompleted(true); 
     }
 
     //Se ejecuta desde el ItemCount
@@ -20,7 +20,6 @@ const ItemDetail = ({ product }) => {
     
     return(
         <>
-        <div>STOCK: {product.stock}</div>
         <div className="container-card">
         <div className="card">
             <h2>DETALLE DEL PRODUCTO ELEGIDO</h2>

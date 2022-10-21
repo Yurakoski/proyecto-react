@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Context } from "../CartContext/CartContext";
 import { Link } from 'react-router-dom';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
 
 const CartView = () => {
 
@@ -9,7 +11,7 @@ const CartView = () => {
 
     const [totalPrice, setTotalPrice] = useState(0);
 
-    //Suma el precio de todos los ítems agregados al carrito
+    //Suma el precio de todos los ítems agregados
     const totalPriceCart = ()=>{
         const priceItems = cart.map(item => item.product.price * item.counter);
         const price= priceItems.reduce((sum, item) => sum + item, 0);
@@ -20,6 +22,12 @@ const CartView = () => {
     useEffect(() => {
         totalPriceCart();
     }, [cart]);
+
+    //A cada producto agregado, se le resta la cantidad seleccionada y se actualiza el stock de Firebase
+    const updateStock = () => {
+        cart.forEach(p => 
+            updateDoc(doc(db, "products", p.product.id),{stock: p.product.stock - p.counter}));
+    }
 
     //Si el carrito está vacío devuelve la leyenda con el link indicado, sino muestra los ítems
     return(
@@ -32,11 +40,12 @@ const CartView = () => {
                         <img className="product-detail" src={prod.product.image}></img>
                             Producto: {prod.product.title} 
                             CANTIDAD: {prod.counter}</div>
-                        <button key={`${prod.product.id}-${prod.product.title}`} onClick={()=>removeItem(prod.product.id)}>Borrar</button>
+                        <button key={`${prod.product.id}-${prod.product.title}`} 
+                                    onClick={()=>removeItem(prod.product.id)}>Borrar</button>
                     </>
                 })}
                 <div>TOTAL: ${totalPrice}</div>
-                <Link to="/form"><button>Finalizar Compra</button></Link>
+                <Link to="/form"><button onClick={updateStock}>Finalizar Compra</button></Link>
          </>)}
         </>
     )
