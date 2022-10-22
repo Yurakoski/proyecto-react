@@ -8,5 +8,28 @@
 }
 
 .button-container{
+    display: flex;
     margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter{
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.button-increment, .button-decrement{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+}
+
+.button{
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(72, 72, 252);
+    border-radius: 1.5rem;
 }

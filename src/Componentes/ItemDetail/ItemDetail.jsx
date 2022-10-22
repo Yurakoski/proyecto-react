@@ -23,13 +23,18 @@ const ItemDetail = ({ product }) => {
         <div className="container-card">
         <div className="card">
             <h2>DETALLE DEL PRODUCTO ELEGIDO</h2>
-            <h3>Producto: {product.title}</h3>
+            <h3>{product.title}</h3>
             <img className="productImage" src={product.image}></img>
+            <p className="price">${product.price}</p>
             <p>Descripción: {product.description}</p>
-            <p>Precio: ${product.price}</p>
         </div>
         </div>
-        {purchaseCompleted ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount onAdd={onAdd} stock={product.stock} initial={1} finishBuying={finishBuying} />}
+        { purchaseCompleted ? 
+            <Link to='/cart'>
+                <div className="container-to-cart">
+                    <button className="button-to-cart">Ir al carrito</button>
+                </div>
+            </Link> : <ItemCount onAdd={onAdd} stock={product.stock} initial={1} finishBuying={finishBuying} /> }
         </>
     )
 }

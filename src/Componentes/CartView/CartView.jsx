@@ -36,16 +36,19 @@ const CartView = () => {
          (<>
             {cart.map((prod) => {
                 return <>
-                        <div key={prod.product.id}>
-                        <img className="product-detail" src={prod.product.image}></img>
+                        <div key={prod.product.id} className="container-detail">
+                            <img className="product-detail" src={prod.product.image}></img>
                             Producto: {prod.product.title} 
-                            CANTIDAD: {prod.counter}</div>
-                        <button key={`${prod.product.id}-${prod.product.title}`} 
+                            CANTIDAD: {prod.counter}
+                        <button className="button-delete" key={`${prod.product.id}-${prod.product.title}`} 
                                     onClick={()=>removeItem(prod.product.id)}>Borrar</button>
+                        </div>
                     </>
                 })}
-                <div>TOTAL: ${totalPrice}</div>
-                <Link to="/form"><button onClick={updateStock}>Finalizar Compra</button></Link>
+                <div className="container-detail">
+                    <div className="total-price">TOTAL: ${totalPrice}</div>
+                    <Link to="/form"><button className="button" onClick={updateStock}>Finalizar Compra</button></Link>
+                </div>
          </>)}
         </>
     )

@@ -34,10 +34,12 @@ const ItemListContainer = ({ greeting })=> {
 
     return(
         <>
+        <section className="background">
             <div className="title">
                 <h2>{ greeting }</h2>
             </div>
             { loading ? <SpinnerCircular /> : <ItemList products= { listProducts } />}
+        </section>
         </>
     )
 }

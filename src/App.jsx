@@ -18,7 +18,7 @@ const App = () => {
            <Title />
         </NavBar>
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting="Bienvenidos"/>}/>
+          <Route path='/' element={<ItemListContainer greeting="Las mejores ofertas, siempre"/>}/>
           <Route path='/category/:IdCategory' element={<ItemListContainer greeting="Bienvenidos"/>}/>
           <Route path='/products/:IdProduct' element={<ItemDetailContainer />}/>
           <Route path='/cart' element={<CartView/>}/>

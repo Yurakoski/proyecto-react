@@ -11,7 +11,7 @@ const Item = ({ product }) => {
         <div className="card">
             <h3>{title}</h3>
             <Link to={`/products/${product.id}`}><img className="product-image" src={image}></img></Link>
-            <p>Precio: ${price}</p>
+            <p className="price">$ {price}</p>
         </div>
         </div>
         </>
