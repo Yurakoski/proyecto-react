@@ -39,7 +39,9 @@ const Form = ()=>{
 
     return(
         <>
-        <form onSubmit={saveData}>
+        <section className="form-container">
+        <div>Complete el siguiente formulario:</div>
+        <form className="form" onSubmit={saveData}>
             <div>Nombre</div>
             <input type="text" name="name" placeholder="Ingrese su nombre" onChange={infoInput} value={user.name}/>
             <div>Teléfono</div>
@@ -48,6 +50,7 @@ const Form = ()=>{
             <input type="email" name="email" placeholder="Ingrese su correo electrónico" onChange={infoInput} value={user.email}/>
         </form>
         <button onClick={finishBuying}>Enviar</button>
+        </section>
         </>
     )
 }

@@ -32,7 +32,7 @@ const CartView = () => {
     //Si el carrito está vacío devuelve la leyenda con el link indicado, sino muestra los ítems
     return(
         <>
-        {cart.length === 0 ? (<div>No agregaste ningún producto, para ver los productos, haz click <Link to="/">aquí</Link></div>) :
+        {cart.length === 0 ? (<div className="cart-container">No agregaste ningún producto, para ver los productos, haz click<Link to="/">aquí</Link></div>) :
          (<>
             {cart.map((prod) => {
                 return <>

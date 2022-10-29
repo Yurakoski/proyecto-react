@@ -2,7 +2,16 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(148, 145, 237);
+    background: black;
+  }
+  
+  header a{
+    color: white;
+  }
+  
+  header img{
+    height: 5rem;
+    border-radius: 2.5rem;
   }
   
   .logo{
@@ -15,6 +24,6 @@ header{
   }
   
   a:hover{
-    background-color: rgb(117, 112, 244);
+    color: red;
   }
   

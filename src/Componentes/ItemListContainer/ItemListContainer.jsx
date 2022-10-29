@@ -35,6 +35,7 @@ const ItemListContainer = ({ greeting })=> {
     return(
         <>
         <section className="background">
+            <img className="banner" src="https://i0.wp.com/www.ildivanohome.com/wp-content/uploads/2015/01/banner-ahora12.jpg?ssl=1"></img>
             <div className="title">
                 <h2>{ greeting }</h2>
             </div>
