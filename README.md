@@ -1,1 +1,2 @@
-Proyecto de e-commerce utilizando la api de https://fakestoreapi.com.
+Proyecto e-commerce de electrodomésticos, que emplea Firebase para traer los productos disponibles. Además, por medio de un formulario, permite enviar la información a esta base de datos y almacenar el nombre y correo electrónico del comprador, los productos y cantidades seleccionadas.
+Link a Firebase: https://console.firebase.google.com/project/proyecto-react-52d2e/firestore/data/~2Fproducts~2Fyn81SIO7bx42z0vG8cdQ
